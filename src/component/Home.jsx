@@ -20,22 +20,22 @@ export default function FoodLandingPage() {
 
   const slides = [
     {
-      image: "food1.jpg",
+      image: "taco.jpg",
       title: "Gourmet Kitchen",
       description: "Experience the finest culinary creations delivered straight to your doorstep",
     },
     {
-      image: "food2.jpg",
+      image: "kartt.jpg",
       title: "Fresh Ingredients",
       description: "We source only the freshest, highest quality ingredients for our dishes",
     },
     {
-      image: "food1.jpg",
+      image: "lunch.jpg",
       title: "Chef's Special",
       description: "Discover unique dishes crafted by our expert chefs",
     },
     {
-      image: "food2.jpg",
+      image: "bowl.jpg",
       title: "Quick Delivery",
       description: "Hot and fresh meals delivered within minutes",
     },
@@ -126,32 +126,32 @@ export default function FoodLandingPage() {
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
-      <div className="relative min-h-screen w-full  text-white overflow-hidden flex items-center justify-center gap-5 bg-red-300 bg-cover">
+      <div className="relative min-h-screen w-full  text-white overflow-hidden flex items-center justify-center gap-5 bg-[#f6f7f2] bg-cover">
         {/* <Navbar />   */}
       <div
         className="container mx-auto"
         onMouseEnter={() => setIsHovered(false)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="relative flex flex-col md:flex-row mt-20 items-center justify-between gap-12 w-full ">
+        <div className="relative pl-9 flex flex-col md:flex-row mt-12 items-center justify-between w-full h-[500px]">
           {/* Content Section */}
 
-          <div className="relative z-10 container mx-auto h-full flex flex-col w-full md:w-1/2 text-white justify-center items-center p-12">
+          <div className="relative z-10 container mx-auto h-full flex flex-col w-full md:w-1/2 text-white justify-center items-center ">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="space-y-2 md:space-y-6"
           >
-            <h1 className="text-3xl md:text-7xl  font-bold tracking-tight text-red-700">Kan-Vi Foods & Company</h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-900">
-              Delivering delicious, customizable meals through our digital-first cloud kitchen network
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-[#b71c22] mb-8">Savor Every Bite – Crafted for <span className=" text-[#e50913]"> Food Lovers </span></h1>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-[#21201e]">
+            Delicious flavors, fresh ingredients, and an experience you’ll never forget. Discover our signature brands now
             </p>
             <div className="flex  gap-4 pt-4 md:pt-8">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-black text-gray-100 px-8 py-3 rounded-full font-semibold text-lg"
+                className="bg-[#21201e] text-gray-100 px-8 py-3 rounded-full font-semibold text-lg"
               >
                 Explore Our Brands
               </motion.button>
@@ -168,23 +168,23 @@ export default function FoodLandingPage() {
         
 
           {/* Image Section */}
-          <div className="relative w-full md:w-1/2  h-[400px] md:h-[400px]">
+          <div className="relative w-full md:w-1/2  h-[400px] md:h-[500px] flex items-center justify-center">
             {slides.map((slide, index) => (
               <div
-                key={index}
-                className={`absolute top-0 right-0 w-[500px] h-[200px] md:w-full md:h-full
-                    transition-all duration-800 ease-in-out flex items-center justify-center ${
+                key={index} 
+                className={`absolute w-[500px] h-[200px] md:w-[350px] md:h-[350px] bg-red-300 rounded-full 
+                    transition-all duration-800 ease-in-out flex items-center  ${
                   currentSlide === index
                     ? "opacity-100 translate-x-0 rotate-0 scale-100"
-                    : "opacity-0 translate-x-24 rotate-45 scale-75"
+                    : "opacity-0 translate-x-20 rotate-90 scale-75"
                 }`}
               >
-                <div className="relative md:w-[400px] md:h-[500px] w-[300px] h-[500px] flex items-center justify-center ">
+                <div className="relative md:w-[500px] md:h-[500px] w-[300px] h-[500px] flex items-center justify-center bg-cover rounded-full ">
                   <img
                     src={slide.image || "/placeholder.svg"}
                     alt={slide.title}
                     fill
-                    className="object-cover rounded-full shadow-2xl"
+                    className="object-cover rounded-full w-[350px] h-[350px] flex items-center shadow-2xl"
                     priority={index === 0}
                   />
                 </div>
@@ -315,7 +315,7 @@ export default function FoodLandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow"
+                className="p-6 bg-gray-200 rounded-xl hover:shadow-lg transition-shadow"
               >
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto text-primary">
                   {feature.icon}
@@ -329,7 +329,7 @@ export default function FoodLandingPage() {
       </section>
 
       {/* Brand Showcase Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4 ">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -338,7 +338,7 @@ export default function FoodLandingPage() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-5xl mx-auto mb-16 "
           >
-            <h2 className="text-4xl font-bold mb-6">Our Food Brands</h2>
+            <h2 className="text-4xl font-bold mb-6 text-[#b71c22]">Our Food Brands</h2>
             <p className="text-lg text-gray-600">
               Discover our unique food brands, each crafted to deliver exceptional taste and quality
             </p>

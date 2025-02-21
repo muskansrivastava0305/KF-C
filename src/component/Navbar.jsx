@@ -28,10 +28,10 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300  ${
-        isScrolled ? "bg-gray-700/80 backdrop-blur-md shadow-lg" : "bg-transparent"
+        isScrolled ? "bg-gray-700/80 backdrop-blur-md shadow-lg" : "bg-[#b71c22]"
       }`}
     >
-      <nav className="container mx-auto px-6  h-20 py-4 flex gap-20 items-center">
+      <nav className="container mx-auto h-20 py-4 flex gap-20 items-center">
         {/* Logo */}
         <div className="w-64">
           <img src="/logo1.png" alt="logo" />
