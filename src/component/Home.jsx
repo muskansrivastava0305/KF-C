@@ -10,6 +10,7 @@ import { Link } from "react-router-dom"
 export default function FoodLandingPage() {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [isHovered, setIsHovered] = useState(false)
+    const [hoveredIndex, setHoveredIndex] = useState(null);
   // Hero Section Images
   // const images = [
   //   "1.jpg",
@@ -357,14 +358,23 @@ export default function FoodLandingPage() {
           className="group relative overflow-hidden rounded-2xl"
         >
           {/* Hover Blur Effect */}
-          <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity" />
+          <div
+        className={`absolute inset-0 bg-black transition-opacity ${
+          hoveredIndex === index ? "opacity-60" : "opacity-0"
+        }`}
+      />
 
           {/* Image Section */}
-          <div className="relative aspect-[4/2]">
+          <div
+        className="relative aspect-[4/2] cursor-pointer"
+        onClick={() =>
+          setHoveredIndex(hoveredIndex === index ? null : index)
+        }
+      >
             <img
               src={brand.image}
               alt={brand.name}
-              className="object-cover w-full h-full transition-transform group-hover:blur-md"
+              className="object-cover w-full h-full transition-transform group-hover:blur-md "
             />
           </div>
           <div className="absolute top-0 left-0 w-full p-4 text-center bg-black/40 text-white text-2xl font-bold">
