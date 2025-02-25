@@ -34,6 +34,7 @@ const ContactPage = () => {
         className="relative h-[60vh]  flex items-center justify-center overflow-hidden"
       >
         <div className="absolute inset-0  z-10" />
+        <div className="absolute inset-0 bg-black/60 z-10"></div>
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -42,6 +43,7 @@ const ContactPage = () => {
           }}
         />
         <div className="relative z-20 text-center">
+            
           <motion.h1
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -71,28 +73,28 @@ const ContactPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Contact Card 1 */}
-            <motion.div whileHover={{ y: -5 }} className="p-6 bg-black rounded-lg text-white text-center">
+            <motion.div whileHover={{ y: -5 }} className="p-6 bg-[#21201E] rounded-lg text-white text-center">
               <Phone className="w-8 h-8 mx-auto mb-4 text-[#b71c22]" />
               <h3 className="text-xl font-semibold mb-2">Phone</h3>
               <p>+1 (555) 123-4567</p>
             </motion.div>
 
             {/* Contact Card 2 */}
-            <motion.div whileHover={{ y: -5 }} className="p-6 bg-black rounded-lg text-white text-center">
+            <motion.div whileHover={{ y: -5 }} className="p-6 bg-[#21201E] rounded-lg text-white text-center">
               <Mail className="w-8 h-8 mx-auto mb-4 text-[#b71c22]" />
               <h3 className="text-xl font-semibold mb-2">Email</h3>
               <p>info@kanvifood.co</p>
             </motion.div>
 
             {/* Contact Card 3 */}
-            <motion.div whileHover={{ y: -5 }} className="p-6 bg-black rounded-lg text-white text-center">
+            <motion.div whileHover={{ y: -5 }} className="p-6 bg-[#21201E] rounded-lg text-white text-center">
               <MapPin className="w-8 h-8 mx-auto mb-4 text-[#b71c22]" />
               <h3 className="text-xl font-semibold mb-2">Address</h3>
               <p>123 Food Street, Cuisine City, FC 12345</p>
             </motion.div>
 
             {/* Contact Card 4 */}
-            <motion.div whileHover={{ y: -5 }} className="p-6 bg-black rounded-lg text-white text-center">
+            <motion.div whileHover={{ y: -5 }} className="p-6 bg-[#21201E] rounded-lg text-white text-center">
               <Clock className="w-8 h-8 mx-auto mb-4 text-[#b71c22]" />
               <h3 className="text-xl font-semibold mb-2">Hours</h3>
               <p>Mon-Sun: 9:00 AM - 10:00 PM</p>

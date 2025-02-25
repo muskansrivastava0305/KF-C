@@ -11,7 +11,7 @@ const BrandPage = () => {
       name: "Frenzo Bowl",
       description:
         "Indulge in our refreshing and healthy Frenzo Bowls, packed with fresh fruits, superfoods, and delicious toppings. Perfect for a nutritious meal or a guilt-free dessert!",
-      image: "/frenzo.jpg",
+      image: "/F1.jpg",
       swiggyLink: "https://www.swiggy.com/frenzo-bowl",
       zomatoLink: "https://www.zomato.com/frenzo-bowl",
     },
@@ -27,7 +27,7 @@ const BrandPage = () => {
       name: "Lunch Break Kart",
       description:
         "Make your lunch break exciting with our diverse menu at Lunch Break Kart. From quick bites to hearty meals, we've got your midday cravings covered!",
-      image: "lunch.jpg",
+      image: "l2.jpg",
       swiggyLink: "https://www.swiggy.com/lunch-break-kart",
       zomatoLink: "https://www.zomato.com/lunch-break-kart",
     },
@@ -58,24 +58,24 @@ const BrandPage = () => {
   }, []);
 
   return (
-    <div className="font-sans min-h-screen text-gray-900 mt-20">
+    <div className="font-sans min-h-screen text-gray-900 ">
       {/* <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
              
 
       </header> */}
       <section
   id="hero"
-  className=" flex items-center justify-center  text-white relative bg-[url('/2.jpg')] bg-cover bg-center"
+  className=" flex items-center justify-center  text-white relative bg-[url('/b2.jpg')] bg-cover bg-center"
 >
 
-    <div className="absolute inset-0 bg-red-800/40 z-10"></div>
+    <div className="absolute inset-0 bg-black/60 z-10"></div>
   <motion.div
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8 }}
-    className="text-center h-[60vh] flex flex-col justify-center items-center relative z-10"
+    className="text-center h-[65vh] flex flex-col justify-center items-center relative z-10"
   >
-    <h1 className="text-5xl font-bold mb-4 text-white">
+    <h1 className="text-5xl font-bold mb-4 text-gray-100">
       Discover Our Amazing Brands
     </h1>
     <p className="text-xl mb-8 text-white">

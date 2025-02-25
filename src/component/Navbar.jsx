@@ -18,7 +18,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "AboutPage", path: "/about" },
+    { name: "About", path: "/about" },
     { name: "Our Brands", path: "/brand" },
     { name: "Blog", path: "/blog" },
     { name: "Why Choose Us", path: "/why-choose-us" },
@@ -28,20 +28,20 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300  ${
-        isScrolled ? "bg-gray-700/80 backdrop-blur-md shadow-lg" : "bg-[#b71c22]"
+        isScrolled ? "bg-gray-700/80 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <nav className="container mx-auto h-20 flex justify-between items-center">
+      <nav className="container mx-auto h-20 flex justify-between items-center md:pr-9">
         {/* Logo */}
         <div className="w-64 ">
-          <img src="/logo3.png" alt="logo" />
+          <img src="/logo1.png" alt="logo" />
         </div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-white font-medium gap-7">
           {navLinks.map((item, index) => (
             <li key={index}>
-              <Link to={item.path} className="hover:text-gray-300 transition font-bold text-lg">
+              <Link to={item.path} className="hover:text-[#b71c22] transition font-bold text-lg">
                 {item.name}
               </Link>
             </li>

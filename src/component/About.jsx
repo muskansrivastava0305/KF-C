@@ -19,7 +19,7 @@ const AboutPage = () => {
       role: "Food Enthusiast",
       image: "https://i.pravatar.cc/150?img=2",
       rating: 5,
-      text: "As someone who loves exploring different cuisines, Kan-Vi is a dream come true. The quality of ingredients and attention to detail in every dish is remarkable. Their customer service is equally impressive!",
+      text: "Kan-Vi's convenience and reliability make it my go-to choice for personal and office meals. The affordable pricing and consistent quality keep me coming back. I appreciate how they cater to different dietary needs with nutritious and delicious options. Feeding a family of five is easy and affordable with Kan-Vi. The kids love the food, and the family meal  ",
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ const AboutPage = () => {
       role: "Business Professional",
       image: "https://i.pravatar.cc/150?img=3",
       rating: 5,
-      text: "The convenience and reliability of Kan-Vi's service make it my go-to choice for both personal and office meals. The affordable pricing and consistent quality keep me coming back.",
+      text: "The convenience and reliability of Kan-Vi's service make it my go-to choice for both personal and office meals. The affordable pricing and consistent quality keep me coming back.Their diverse menu caters to all tastes, ensuring there's always something satisfying to choose from. The timely delivery and fresh, flavorful dishes never fail to impress.",
     },
     {
       id: 4,
@@ -35,7 +35,7 @@ const AboutPage = () => {
       role: "Health Enthusiast",
       image: "https://i.pravatar.cc/150?img=4",
       rating: 5,
-      text: "I appreciate how Kan-Vi caters to different dietary requirements. Their healthy options are both nutritious and delicious. The portion sizes are perfect, and the value for money is exceptional.",
+      text: "The convenience and reliability of Kan-Vi's service make it my go-to choice for both personal and office meals. The affordable pricing and consistent quality keep me coming back.Their diverse menu caters to all tastes, ensuring there's always something satisfying to choose from. ",
     },
     {
       id: 5,
@@ -43,7 +43,7 @@ const AboutPage = () => {
       role: "Family Customer",
       image: "https://i.pravatar.cc/150?img=5",
       rating: 5,
-      text: "Feeding a family of five can be challenging, but Kan-Vi makes it easy and affordable. The kids love the food, and I love the convenience. The family meal deals are a great value!",
+      text: "Kan-Vi's convenience and reliability make it my go-to choice for personal and office meals. The affordable pricing and consistent quality keep me coming back.I appreciate how they cater to different dietary needs with nutritious and delicious options. Feeding a family of five is easy and affordable with Kan-Vi.",
     },
   ];
 
@@ -83,7 +83,7 @@ const AboutPage = () => {
     setIsAutoPlaying(true);
   };
   return (
-    <div className="min-h-screen bg-white mt-20">
+    <div className="min-h-screen bg-white ">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -91,7 +91,7 @@ const AboutPage = () => {
         transition={{ duration: 1 }}
         className="relative h-[60vh] flex items-center justify-center overflow-hidden"
       >
-        <div className="absolute inset-0 bg-red-800/40 z-10"></div>
+        <div className="absolute inset-0 bg-black/60 z-10"></div>
         <img
           src="2.jpg"
           alt="Food Background"
@@ -150,7 +150,7 @@ const AboutPage = () => {
               className="rounded-lg overflow-hidden shadow-xl"
             >
               <img
-                src="/s.jpg"
+                src="/jo.jpg"
                 alt="Our Beginning"
                 className="w-[600px] h-[350px] object-cover"
               />
@@ -212,7 +212,7 @@ const AboutPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-8 mb-16"
+            className="grid md:grid-cols-2 gap-8 mb-7"
           >
             <div className="bg-red-50 p-8 rounded-lg">
               <h3 className="text-2xl font-bold text-red-800 mb-4">
@@ -270,9 +270,9 @@ const AboutPage = () => {
                     key={testimonial.id}
                     className="w-full flex-shrink-0 p-8 md:p-12"
                   >
-                    <div className="grid md:grid-cols-[1fr,2fr] gap-8 items-center">
+                    <div className="md:flex md:grid-cols-[1fr,2fr] gap-8 items-center">
                       <div className="text-center md:text-left">
-                        <div className="relative w-32 h-32 mx-auto md:mx-0">
+                        <div className="relative w-40 h-40 mx-auto md:mx-0">
                           <img
                             src={testimonial.image || "/placeholder.svg"}
                             alt={testimonial.name}

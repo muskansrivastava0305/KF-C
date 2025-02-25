@@ -57,9 +57,9 @@ export default function WhyChooseUs() {
   }
 
   return (
-    <div className="min-h-screen bg-white mt-20">
+    <div className="min-h-screen bg-white ">
       {/* Hero Section */}
-      <section className="relative h-[60vh] w-full">
+      <section className="relative h-[65vh] w-full">
         <img
           src="/why.jpg"
           alt="Food background"
@@ -67,6 +67,7 @@ export default function WhyChooseUs() {
           className="object-cover brightness-50 h-[400px] w-full object-center"
           priority
         />
+    
         <div className="absolute inset-0 flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

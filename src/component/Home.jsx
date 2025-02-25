@@ -9,39 +9,40 @@ import { Link } from "react-router-dom"
 
 export default function FoodLandingPage() {
     const [currentSlide, setCurrentSlide] = useState(0)
+    const [currentImage, setCurrentImage] = useState(0)
     const [isHovered, setIsHovered] = useState(false)
     const [hoveredIndex, setHoveredIndex] = useState(null);
   // Hero Section Images
-  // const images = [
-  //   "1.jpg",
-  //   "2.jpg",
-  //   "3.jpg",
-  //   "4.jpg",
-  //   "5.png",
-  // ];
+  const images = [
+    "h1.jpg",
+    "taco1.jpg",
+    "on.jpg",
+    "d1.jpg",
+    "online1.jpg",
+  ];
 
-  const slides = [
-    {
-      image: "taco.jpg",
-      title: "Gourmet Kitchen",
-      description: "Experience the finest culinary creations delivered straight to your doorstep",
-    },
-    {
-      image: "kartt.jpg",
-      title: "Fresh Ingredients",
-      description: "We source only the freshest, highest quality ingredients for our dishes",
-    },
-    {
-      image: "lunch.jpg",
-      title: "Chef's Special",
-      description: "Discover unique dishes crafted by our expert chefs",
-    },
-    {
-      image: "bowl.jpg",
-      title: "Quick Delivery",
-      description: "Hot and fresh meals delivered within minutes",
-    },
-  ]
+  // const slides = [
+  //   {
+  //     image: "taco.jpg",
+  //     title: "Gourmet Kitchen",
+  //     description: "Experience the finest culinary creations delivered straight to your doorstep",
+  //   },
+  //   {
+  //     image: "kartt.jpg",
+  //     title: "Fresh Ingredients",
+  //     description: "We source only the freshest, highest quality ingredients for our dishes",
+  //   },
+  //   {
+  //     image: "lunch.jpg",
+  //     title: "Chef's Special",
+  //     description: "Discover unique dishes crafted by our expert chefs",
+  //   },
+  //   {
+  //     image: "bowl.jpg",
+  //     title: "Quick Delivery",
+  //     description: "Hot and fresh meals delivered within minutes",
+  //   },
+  // ]
 
   // Intro Section Features
   const features = [
@@ -72,25 +73,25 @@ export default function FoodLandingPage() {
     {
       name: "Franzoo Bowl",
       description: "Fresh and healthy bowls packed with flavors",
-      image:  "frenzo.jpg",
+      image:  "F1.jpg",
       color: "from-green-500 to-emerald-700",
     },
     {
       name: "Music Taco Bell",
       description: "Authentic Mexican flavors with a musical twist",
-      image:  "music.jpg",
+      image:  "tac.jpg",
       color: "from-red-500 to-orange-700",
     },
     {
       name: "Lunch Break Kart",
       description: "Quick and delicious lunch options for busy professionals",
-      image:  "kart.jpg",
+      image:  "lunch1.jpg",
       color: "from-blue-500 to-indigo-700",
     },
     {
         name: "Lunch Break Kart",
         description: "Quick and delicious lunch options for busy professionals",
-        image:  "kart.jpg",
+        image:  "/lunch1.jpg",
         color: "from-blue-500 to-indigo-700",
       },
       {
@@ -108,31 +109,31 @@ export default function FoodLandingPage() {
   ]
 
   // Auto-rotate hero images
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setCurrentImage((prev) => (prev + 1) % images.length)
-  //   }, 4000)
-  //   return () => clearInterval(timer)
-  // }, [])
   useEffect(() => {
-    if (!isHovered) {
-      const timer = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length)
-      }, 5000)
-      return () => clearInterval(timer)
-    }
-  }, [isHovered])
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [])
+  // useEffect(() => {
+  //   if (!isHovered) {
+  //     const timer = setInterval(() => {
+  //       setCurrentSlide((prev) => (prev + 1) % slides.length)
+  //     }, 5000)
+  //     return () => clearInterval(timer)
+  //   }
+  // }, [isHovered])
 
 
   return (
     <main className=" bg-gradient-to-b from-gray-500 to-white min-h-screen "> 
       {/* Hero Section */}
-      <section className="relative overflow-hidden md:mt-12 mt-20">
+      {/* <section className="relative overflow-hidden md:mt-12 mt-20">
   <div className="relative w-full min-h-screen md:h-[600px] text-white flex items-center justify-center gap-5 bg-[#f6f7f2] bg-cover">
     <div className="container mx-auto">
-      <div className="relative md:pl-9 px-4 flex flex-col md:flex-row items-center justify-between w-full gap-8">
+      <div className="relative md:pl-9 px-4 flex flex-col md:flex-row items-center justify-between w-full gap-8"> */}
         {/* Content Section */}
-        <div className="relative z-10 container mx-auto h-full flex flex-col w-full md:w-1/2 text-white justify-center items-center">
+        {/* <div className="relative z-10 container mx-auto h-full flex flex-col w-full md:w-1/2 text-white justify-center items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -162,10 +163,10 @@ export default function FoodLandingPage() {
               </motion.button>
             </div>
           </motion.div>
-        </div> 
+        </div>  */}
 
         {/* Image Section */}
-        <div className="relative w-full md:w-1/2 flex justify-center items-center min-h-[300px] md:min-h-[500px]">
+        {/* <div className="relative w-full md:w-1/2 flex justify-center items-center min-h-[300px] md:min-h-[500px]">
           {slides.map((slide, index) => (
             <div
               key={index}
@@ -187,10 +188,10 @@ export default function FoodLandingPage() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Navigation Dots */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      {/* <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -203,10 +204,10 @@ export default function FoodLandingPage() {
         ))}
       </div>
     </div>
-  </div>
+  </div> */}
 
   {/* Scroll Indicator */}
-  <motion.div
+  {/* <motion.div
     animate={{ y: [0, 10, 0] }}
     transition={{ duration: 1.5, repeat: Infinity }}
     className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 hidden md:block"
@@ -215,26 +216,14 @@ export default function FoodLandingPage() {
       <div className="w-1 h-2 bg-white rounded-full mt-2" />
     </div>
   </motion.div>
-</section>
+</section> */}
 
 
 
 
-        {/* <div className="w-full md:w-1/2 space-y-6 z-10">
-            {slides.map((slide, index) => (
-              <div
-                key={index}
-                className={`transition-all duration-700 absolute ${
-                  currentSlide === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-              >
-                <h2 className="text-4xl md:text-6xl font-bold mb-4">{slide.title}</h2>
-                <p className="text-xl md:text-2xl text-gray-300">{slide.description}</p>
-              </div>
-            ))}
-          </div> */}
+<section className="relative h-screen overflow-hidden px-4">
         {/* Background Images */}
-        {/* <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0">
           {images.map((img, index) => (
             <motion.div
               key={index}
@@ -250,48 +239,57 @@ export default function FoodLandingPage() {
                 src={img || "/placeholder.svg"}
                 alt={`Food image ${index + 1}`}
                 fill
-                className="object-cover"
+                className="object-cover md:object-top w-full h-full "
                 priority={index === 0}
               />
             </motion.div>
           ))}
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
 
         {/* Hero Content */}
-        {/* <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
+        <div className="relative z-10 container mx-auto h-full flex flex-col justify-center items-center text-center text-white md:w-[900px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">Kan-Vi Foods & Company</h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-200">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Savor Every Bite – Crafted for <span className="text-[#e50913]">Food Lovers</span></h1>
+            <p className="text-xl md:text-lg max-w-3xl mx-auto text-gray-200">
               Delivering delicious, customizable meals through our digital-first cloud kitchen network
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-8">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-gray-900 px-8 py-3 rounded-full font-semibold text-lg"
+                className="bg-[#b71c22] text-white hover:bg-gray-200 hover:text-[#b71c22] cursor-pointer px-8 py-3 rounded-full font-semibold text-lg"
               >
-                Explore Our Brands
+                <Link to={'/brand'}>Explore Our Brands</Link>
+                
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white px-8 py-3 rounded-full font-semibold text-lg"
+                className="border-2 border-[#b71c22] px-8 py-3 rounded-full font-semibold text-lg"
               >
                 Order Now
               </motion.button>
             </div>
           </motion.div>
-        </div>  */}
+        </div>
 
         {/* Scroll Indicator */}
-       
-
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        >
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2" />
+          </div>
+        </motion.div>
+      </section>
       {/* Intro Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
