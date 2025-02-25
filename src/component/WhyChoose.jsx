@@ -1,5 +1,3 @@
-"use client"
-
 import { motion, useInView } from "framer-motion"
 import {
   Award,
@@ -14,8 +12,6 @@ import {
   Truck,
   UtensilsCrossed,
 } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 
 const Counter = ({ end, duration = 2000 }) => {
@@ -61,14 +57,14 @@ export default function WhyChooseUs() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white mt-20">
       {/* Hero Section */}
-      <section className="relative h-[70vh] min-h-[600px] w-full">
-        <Image
-          src="/placeholder.svg?height=1080&width=1920"
+      <section className="relative h-[60vh] w-full">
+        <img
+          src="/why.jpg"
           alt="Food background"
           fill
-          className="object-cover brightness-50"
+          className="object-cover brightness-50 h-[400px] w-full object-center"
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -83,12 +79,12 @@ export default function WhyChooseUs() {
               Experience the perfect blend of taste, convenience, and value
             </p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-              <Link
+              <a
                 href="/menu"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-orange-600 px-8 text-sm font-medium text-white hover:bg-orange-700 transition-colors"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-black hover:bg-red-700 hover:text-white transition-colors"
               >
                 Explore Our Menu
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -142,7 +138,7 @@ export default function WhyChooseUs() {
               </div>
             </div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden">
-              <Image src="/placeholder.svg?height=800&width=600" alt="Affordable meals" fill className="object-cover" />
+              <img src="/meals.jpg" alt="Affordable meals" fill className="object-cover h-[400px] " />
             </div>
           </motion.div>
         </div>
@@ -158,40 +154,40 @@ export default function WhyChooseUs() {
             transition={{ duration: 0.6 }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           >
-            <div className="grid grid-cols-2 gap-4 lg:order-last">
+            <div className="grid grid-cols-2 gap-4 lg:order-last order-1">
               <div className="space-y-4">
                 <div className="relative h-[200px] rounded-xl overflow-hidden">
-                  <Image
-                    src="/placeholder.svg?height=400&width=300"
+                  <img
+                    src="/quality.jpg"
                     alt="Food variety 1"
                     fill
-                    className="object-cover"
+                    className="object-cover h-[200px] w-[500px]"
                   />
                 </div>
-                <div className="relative h-[150px] rounded-xl overflow-hidden">
-                  <Image
-                    src="/placeholder.svg?height=300&width=300"
+                <div className="relative h-[150px] rounded-xl overflow-hidden ">
+                  <img
+                    src="/b.jpg"
                     alt="Food variety 2"
                     fill
-                    className="object-cover"
+                    className="object-cover  h-[200px] w-[500px]"
                   />
                 </div>
               </div>
               <div className="space-y-4 mt-8">
                 <div className="relative h-[150px] rounded-xl overflow-hidden">
-                  <Image
-                    src="/placeholder.svg?height=300&width=300"
+                  <img
+                    src="/season.jpg"
                     alt="Food variety 3"
                     fill
-                    className="object-cover"
+                    className="object-cover  h-[200px] w-[500px]"
                   />
                 </div>
                 <div className="relative h-[200px] rounded-xl overflow-hidden">
-                  <Image
-                    src="/placeholder.svg?height=400&width=300"
+                  <img
+                    src="/choice.jpg"
                     alt="Food variety 4"
                     fill
-                    className="object-cover"
+                    className="object-cover h-[200px] w-[500px]"
                   />
                 </div>
               </div>
@@ -237,7 +233,7 @@ export default function WhyChooseUs() {
       </section>
 
       {/* Delivery Section */}
-      <section className="py-20 px-4 bg-blue-50">
+      <section className="py-20 px-4 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -318,25 +314,25 @@ export default function WhyChooseUs() {
             className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center"
           >
             <div className="p-6 rounded-xl bg-orange-50">
-              <h3 className="text-4xl font-bold text-orange-600 mb-2">
+              <h3 className="text-4xl font-bold text-red-700 mb-2">
                 <Counter end={15000} />+
               </h3>
               <p className="text-gray-600">Happy Customers</p>
             </div>
             <div className="p-6 rounded-xl bg-green-50">
-              <h3 className="text-4xl font-bold text-green-600 mb-2">
+              <h3 className="text-4xl font-bold text-red-700 mb-2">
                 <Counter end={200} />+
               </h3>
               <p className="text-gray-600">Menu Items</p>
             </div>
             <div className="p-6 rounded-xl bg-blue-50">
-              <h3 className="text-4xl font-bold text-blue-600 mb-2">
+              <h3 className="text-4xl font-bold text-red-700 mb-2">
                 <Counter end={30} />
               </h3>
               <p className="text-gray-600">Min Delivery Time</p>
             </div>
             <div className="p-6 rounded-xl bg-purple-50">
-              <h3 className="text-4xl font-bold text-purple-600 mb-2">
+              <h3 className="text-4xl font-bold text-red-700 mb-2">
                 <Counter end={50} />+
               </h3>
               <p className="text-gray-600">Delivery Partners</p>
@@ -372,7 +368,7 @@ export default function WhyChooseUs() {
                 className="bg-white p-6 rounded-xl shadow-lg"
               >
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gray-200 mr-4" />
+                  <div className="w-12 h-12 rounded-full bg-[url('/p.jpg')] mr-4 bg-cover" />
                   <div>
                     <h4 className="font-semibold">Customer Name</h4>
                     <div className="flex text-yellow-400">
@@ -393,7 +389,7 @@ export default function WhyChooseUs() {
       </section>
 
       {/* Quality Assurance Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-orange-50">
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto max-w-6xl px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -435,7 +431,7 @@ export default function WhyChooseUs() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-orange-600 text-white">
+      <section className="py-20 bg-gray-600 text-white">
         <div className="container mx-auto max-w-6xl px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -448,12 +444,12 @@ export default function WhyChooseUs() {
             <p className="max-w-2xl mx-auto mb-8 text-orange-100">
               Join thousands of satisfied customers who choose Kan-Vi for their daily meals.
             </p>
-            <Link
-              href="/menu"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-white text-orange-600 px-8 text-sm font-medium hover:bg-orange-50 transition-colors"
+            <a
+              href="/#order"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-white text-gray-900 px-8 text-sm font-medium hover:bg-orange-50 transition-colors"
             >
               Order Now
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>

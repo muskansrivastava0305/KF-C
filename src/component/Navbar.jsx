@@ -22,7 +22,7 @@ export default function Navbar() {
     { name: "Our Brands", path: "/brand" },
     { name: "Blog", path: "/blog" },
     { name: "Why Choose Us", path: "/why-choose-us" },
-    { name: "Contact Us", path: "/contact-us" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   return (
@@ -31,9 +31,9 @@ export default function Navbar() {
         isScrolled ? "bg-gray-700/80 backdrop-blur-md shadow-lg" : "bg-[#b71c22]"
       }`}
     >
-      <nav className="container mx-auto h-20 py-4 flex gap-20 items-center">
+      <nav className="container mx-auto h-20 flex justify-between items-center">
         {/* Logo */}
-        <div className="w-64">
+        <div className="w-64 ">
           <img src="/logo1.png" alt="logo" />
         </div>
 
@@ -49,7 +49,7 @@ export default function Navbar() {
         </ul>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden mr-4 text-white" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </nav>

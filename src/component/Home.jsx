@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 // import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Utensils, Truck, Clock, Users } from "lucide-react"
+import { Link } from "react-router-dom"
 //import Navbar from "./component/Navbar"
 
 export default function FoodLandingPage() {
@@ -123,101 +124,101 @@ export default function FoodLandingPage() {
 
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <main className=" bg-gradient-to-b from-gray-500 to-white min-h-screen "> 
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
-      <div className="relative min-h-screen w-full  text-white overflow-hidden flex items-center justify-center gap-5 bg-[#f6f7f2] bg-cover">
-        {/* <Navbar />   */}
-      <div
-        className="container mx-auto"
-        onMouseEnter={() => setIsHovered(false)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div className="relative pl-9 flex flex-col md:flex-row mt-12 items-center justify-between w-full h-[500px]">
-          {/* Content Section */}
-
-          <div className="relative z-10 container mx-auto h-full flex flex-col w-full md:w-1/2 text-white justify-center items-center ">
+      <section className="relative overflow-hidden md:mt-12 mt-20">
+  <div className="relative w-full min-h-screen md:h-[600px] text-white flex items-center justify-center gap-5 bg-[#f6f7f2] bg-cover">
+    <div className="container mx-auto">
+      <div className="relative md:pl-9 px-4 flex flex-col md:flex-row items-center justify-between w-full gap-8">
+        {/* Content Section */}
+        <div className="relative z-10 container mx-auto h-full flex flex-col w-full md:w-1/2 text-white justify-center items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-2 md:space-y-6"
+            className="space-y-4 md:space-y-6 text-center md:text-left"
           >
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-[#b71c22] mb-8">Savor Every Bite – Crafted for <span className=" text-[#e50913]"> Food Lovers </span></h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-[#21201e]">
-            Delicious flavors, fresh ingredients, and an experience you’ll never forget. Discover our signature brands now
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#b71c22] mb-4 md:mb-8">
+              Savor Every Bite – Crafted for <span className="text-[#e50913]">Food Lovers</span>
+            </h1>
+            <p className="text-base sm:text-lg md:text-2xl max-w-3xl mx-auto text-[#21201e]">
+              Delicious flavors, fresh ingredients, and an experience you’ll never forget. Discover our signature brands now.
             </p>
-            <div className="flex  gap-4 pt-4 md:pt-8">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 md:pt-8 justify-center md:justify-start">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#21201e] text-gray-100 px-8 py-3 rounded-full font-semibold text-lg"
+                className="bg-[#21201e] text-gray-100 px-6 py-2 md:px-8 md:py-3 rounded-full font-semibold text-base md:text-lg"
               >
-                Explore Our Brands
+                <Link to="/brand">Explore Our Brands</Link>
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-black md:px-8 md:py-3 px-4 py-1 rounded-full font-semibold md:text-lg text-black"
+                className="border-2 border-black px-6 py-2 md:px-8 md:py-3 rounded-full font-semibold text-base md:text-lg text-black"
               >
                 Order Now
               </motion.button>
             </div>
           </motion.div>
         </div> 
-        
 
-          {/* Image Section */}
-          <div className="relative w-full md:w-1/2  h-[400px] md:h-[500px] flex items-center justify-center">
-            {slides.map((slide, index) => (
-              <div
-                key={index} 
-                className={`absolute w-[500px] h-[200px] md:w-[350px] md:h-[350px] bg-red-300 rounded-full 
-                    transition-all duration-800 ease-in-out flex items-center  ${
-                  currentSlide === index
-                    ? "opacity-100 translate-x-0 rotate-0 scale-100"
-                    : "opacity-0 translate-x-20 rotate-90 scale-75"
-                }`}
-              >
-                <div className="relative md:w-[500px] md:h-[500px] w-[300px] h-[500px] flex items-center justify-center bg-cover rounded-full ">
-                  <img
-                    src={slide.image || "/placeholder.svg"}
-                    alt={slide.title}
-                    fill
-                    className="object-cover rounded-full w-[350px] h-[350px] flex items-center shadow-2xl"
-                    priority={index === 0}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Navigation Dots */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
-          {slides.map((_, index) => (
-            <button
+        {/* Image Section */}
+        <div className="relative w-full md:w-1/2 flex justify-center items-center min-h-[300px] md:min-h-[500px]">
+          {slides.map((slide, index) => (
+            <div
               key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                currentSlide === index ? "bg-white scale-125" : "bg-gray-500"
+              className={`absolute w-[280px] h-[280px] sm:w-[250px] sm:h-[250px] md:w-[350px] md:h-[350px] rounded-full md:mt-0 mt-12
+                  transition-all duration-800 ease-in-out flex items-center justify-center ${
+                currentSlide === index
+                  ? "opacity-100 translate-x-0 rotate-0 scale-100"
+                  : "opacity-0 translate-x-20 rotate-90 scale-75"
               }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
+            >
+              <div className="relative w-full h-full flex items-center justify-center bg-cover rounded-full">
+                <img
+                  src={slide.image || "/placeholder.svg"}
+                  alt={slide.title}
+                  className="object-cover rounded-full w-full h-full shadow-2xl"
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
+              </div>
+            </div>
           ))}
         </div>
       </div>
+
+      {/* Navigation Dots */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+              currentSlide === index ? "bg-white scale-125" : "bg-gray-500"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
     </div>
-    <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-        >
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white rounded-full mt-2" />
-          </div>
-        </motion.div>
-      </section>
+  </div>
+
+  {/* Scroll Indicator */}
+  <motion.div
+    animate={{ y: [0, 10, 0] }}
+    transition={{ duration: 1.5, repeat: Infinity }}
+    className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 hidden md:block"
+  >
+    <div className="w-5 h-8 border-2 border-white rounded-full flex justify-center">
+      <div className="w-1 h-2 bg-white rounded-full mt-2" />
+    </div>
+  </motion.div>
+</section>
+
+
+
+
         {/* <div className="w-full md:w-1/2 space-y-6 z-10">
             {slides.map((slide, index) => (
               <div

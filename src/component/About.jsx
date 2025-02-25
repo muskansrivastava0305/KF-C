@@ -1,7 +1,88 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react"
+import { useCallback, useEffect, useState } from "react"
 
 const AboutPage = () => {
+
+  const testimonials = [
+    {
+      id: 1,
+      name: "Sarah Johnson",
+      role: "Regular Customer",
+      image: "https://i.pravatar.cc/150?img=1",
+      rating: 5,
+      text: "Kan-Vi has completely transformed my dining experience! The variety of dishes and the ability to customize meals according to my dietary preferences is fantastic. The delivery is always on time, and the food arrives hot and fresh.",
+    },
+    {
+      id: 2,
+      name: "Michael Chen",
+      role: "Food Enthusiast",
+      image: "https://i.pravatar.cc/150?img=2",
+      rating: 5,
+      text: "As someone who loves exploring different cuisines, Kan-Vi is a dream come true. The quality of ingredients and attention to detail in every dish is remarkable. Their customer service is equally impressive!",
+    },
+    {
+      id: 3,
+      name: "Emily Rodriguez",
+      role: "Business Professional",
+      image: "https://i.pravatar.cc/150?img=3",
+      rating: 5,
+      text: "The convenience and reliability of Kan-Vi's service make it my go-to choice for both personal and office meals. The affordable pricing and consistent quality keep me coming back.",
+    },
+    {
+      id: 4,
+      name: "David Kim",
+      role: "Health Enthusiast",
+      image: "https://i.pravatar.cc/150?img=4",
+      rating: 5,
+      text: "I appreciate how Kan-Vi caters to different dietary requirements. Their healthy options are both nutritious and delicious. The portion sizes are perfect, and the value for money is exceptional.",
+    },
+    {
+      id: 5,
+      name: "Lisa Thompson",
+      role: "Family Customer",
+      image: "https://i.pravatar.cc/150?img=5",
+      rating: 5,
+      text: "Feeding a family of five can be challenging, but Kan-Vi makes it easy and affordable. The kids love the food, and I love the convenience. The family meal deals are a great value!",
+    },
+  ]
+
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const slideCount = testimonials.length
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % slideCount)
+  }, [slideCount])
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + slideCount) % slideCount)
+  }, [slideCount])
+
+  useEffect(() => {
+    let intervalId
+
+    if (isAutoPlaying) {
+      intervalId = setInterval(() => {
+        nextSlide()
+      }, 5000) // Change slide every 5 seconds
+    }
+
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId)
+      }
+    }
+  }, [isAutoPlaying, nextSlide])
+
+  const handleMouseEnter = () => {
+    setIsAutoPlaying(false)
+  }
+
+  const handleMouseLeave = () => {
+    setIsAutoPlaying(true)
+  }
   return (
     <div className="min-h-screen bg-white mt-20">
       {/* Hero Section */}
@@ -83,15 +164,15 @@ const AboutPage = () => {
             <motion.div 
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
-              className="rounded-lg overflow-hidden shadow-xl md:order-2"
+              className="rounded-lg overflow-hidden shadow-xl md:order-2 order-2"
             >
               <img
-                src="/1.jpg"
+                src="/2.jpg"
                 alt="Our Journey"
                 className="w-full h-full object-cover"
               />
             </motion.div>
-            <div className="md:order-2">
+            <div className="md:order-2 ">
               <h2 className="text-3xl font-bold text-red-800 mb-6">Kan-Vi Foods' Journey</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Our journey has been marked by continuous innovation and unwavering 
@@ -145,6 +226,121 @@ const AboutPage = () => {
           </motion.div>
         </div>
       </section>
+
+      <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white py-20">
+      <div className="container mx-auto px-4">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">What Our Customers Say</h1>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Don't just take our word for it - hear from our satisfied customers about their experience with Kan-Vi
+          </p>
+        </div>
+
+        {/* Testimonials Carousel */}
+        <div className="relative max-w-6xl mx-auto" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          {/* Main Testimonial */}
+          <div className="relative overflow-hidden rounded-2xl bg-white shadow-xl">
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{
+                transform: `translateX(-${currentSlide * 100}%)`,
+              }}
+            >
+              {testimonials.map((testimonial) => (
+                <div key={testimonial.id} className="w-full flex-shrink-0 p-8 md:p-12">
+                  <div className="grid md:grid-cols-[1fr,2fr] gap-8 items-center">
+                    <div className="text-center md:text-left">
+                      <div className="relative w-32 h-32 mx-auto md:mx-0">
+                        <img
+                          src={testimonial.image || "/placeholder.svg"}
+                          alt={testimonial.name}
+                          className="w-full h-full object-cover rounded-full"
+                        />
+                        <div className="absolute -bottom-2 -right-2 bg-orange-500 rounded-full p-2">
+                          <Quote className="w-4 h-4 text-white" />
+                        </div>
+                      </div>
+                      <div className="mt-4">
+                        <h3 className="font-bold text-xl">{testimonial.name}</h3>
+                        <p className="text-gray-600">{testimonial.role}</p>
+                        <div className="flex items-center justify-center md:justify-start mt-2">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="relative">
+                      <Quote className="absolute -left-2 -top-2 w-8 h-8 text-orange-200" />
+                      <p className="text-gray-600 text-lg leading-relaxed pl-6">{testimonial.text}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg backdrop-blur-sm transition-all"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg backdrop-blur-sm transition-all"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Dots Navigation */}
+          <div className="flex justify-center mt-8 gap-2">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  currentSlide === index ? "bg-orange-500 w-8" : "bg-orange-200 hover:bg-orange-300"
+                }`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Stats Section */}
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-20">
+          <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+            <div className="text-4xl font-bold text-orange-500 mb-2">15k+</div>
+            <div className="text-gray-600">Happy Customers</div>
+          </div>
+          <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+            <div className="text-4xl font-bold text-orange-500 mb-2">4.9</div>
+            <div className="text-gray-600">Average Rating</div>
+          </div>
+          <div className="text-center p-6 bg-white rounded-xl shadow-lg">
+            <div className="text-4xl font-bold text-orange-500 mb-2">98%</div>
+            <div className="text-gray-600">Satisfaction Rate</div>
+          </div>
+        </div> */}
+
+        {/* Call to Action */}
+        <div className="text-center mt-20">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Experience Our Service?</h2>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+            Join thousands of satisfied customers who choose Kan-Vi for their daily meals.
+          </p>
+          <button className="bg-orange-500 text-white px-8 py-3 rounded-full font-medium hover:bg-orange-600 transition-colors">
+            Order Now
+          </button>
+        </div>
+      </div>
+    </div>
+
 
      
     </div>
