@@ -124,6 +124,27 @@ export default function FoodLandingPage() {
   //   }
   // }, [isHovered])
 
+const handleTouch = (index) => {
+  setHoveredIndex(hoveredIndex === index ? null : index);
+};
+
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    // Check if the click was outside the card
+    if (!event.target.closest(".brand-card")) {
+      setHoveredIndex(null);
+    }
+  };
+
+  // Attach event listener
+  document.addEventListener("click", handleClickOutside);
+  return () => {
+    // Cleanup event listener on component unmount
+    document.removeEventListener("click", handleClickOutside);
+  };
+}, []);
+
+
 
   return (
     <main className=" bg-gradient-to-b from-gray-500 to-white min-h-screen "> 
@@ -346,52 +367,55 @@ export default function FoodLandingPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
       {brands.map((brand, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: index * 0.2 }}
-          whileHover={{ y: -10 }}
-          className="group relative overflow-hidden rounded-2xl"
-        >
-          {/* Hover Blur Effect */}
-          <div
-        className={`absolute inset-0 bg-black transition-opacity ${
-          hoveredIndex === index ? "opacity-60" : "opacity-0"
-        }`}
-      />
+       <motion.div
+  key={index}
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, delay: index * 0.2 }}
+  whileHover={{ y: -10 }}
+  className="group relative overflow-hidden rounded-2xl brand-card"
+  onClick={() => handleTouch(index)} // Toggle hover on click
+>
+  {/* Hover Blur Effect */}
+  <div
+    className={`absolute inset-0 bg-black transition-opacity ${
+      hoveredIndex === index ? "opacity-60" : "opacity-0"
+    }`}
+  />
 
-          {/* Image Section */}
-          <div
-        className="relative aspect-[4/2] cursor-pointer"
-        onClick={() =>
-          setHoveredIndex(hoveredIndex === index ? null : index)
-        }
-      >
-            <img
-              src={brand.image}
-              alt={brand.name}
-              className="object-cover w-full h-full transition-transform group-hover:blur-md "
-            />
-          </div>
-          <div className="absolute top-0 left-0 w-full p-4 text-center bg-black/40 text-white text-2xl font-bold">
-            {brand.name}
-          </div>
+  {/* Image Section */}
+  <div className="relative aspect-[4/2] cursor-pointer">
+    <img
+      src={brand.image}
+      alt={brand.name}
+      className="object-cover w-full h-full transition-transform group-hover:blur-md"
+    />
+  </div>
 
-          {/* Content Overlay */}
-          <div className="absolute inset-0 flex flex-col justify-center p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity items-center mt-12">
-            {/* <h3 className="text-2xl font-bold mb-2">{brand.name}</h3> */}
-            <p className="text-gray-100">{brand.description}</p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-4 bg-white text-gray-900 px-6 py-2 rounded-full font-semibold inline-block w-fit hover:bg-gray-900 hover:text-white cursor-pointer"
-            >
-              View Menu
-            </motion.button>
-          </div>
-        </motion.div>
+  <div className="absolute top-0 left-0 w-full p-4 text-center bg-black/40 text-white text-2xl font-bold">
+    {brand.name}
+  </div>
+
+  {/* Content Overlay */}
+  <div
+    className={`absolute inset-0 flex flex-col justify-center p-6 text-white transition-opacity items-center mt-12 ${
+      hoveredIndex === index ? "opacity-100 backdrop-blur-sm" : "opacity-0"
+    } group-hover:opacity-100`}
+  >
+    <p className="text-gray-100 mt-2">{brand.description}</p>
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="mt-4 bg-white text-gray-900 px-6 py-2 rounded-full font-semibold inline-block w-fit hover:bg-gray-900 hover:text-white cursor-pointer"
+    >
+      View Menu
+    </motion.button>
+  </div>
+</motion.div>
+
+      
+      
       ))}
     </div>
         </div>

@@ -66,8 +66,8 @@ const BlogPage = () => {
       {/* Hero Section */}
       
       <section className=" h-[65vh] text-white py-20 bg-[url('/blogpage.jpg')] bg-cover bg-center flex items-center justify-center relative"> 
-        
-        <div className="container mx-auto px-4 text-center ">
+      <div className="absolute inset-0 bg-black/60 z-0"></div>
+        <div className="container mx-auto px-4 text-center z-10 ">
           <motion.h1
             className="text-5xl font-bold mb-4 "
             initial={{ opacity: 0, y: -50 }}
@@ -93,7 +93,9 @@ const BlogPage = () => {
             Explore Posts
           </motion.a>
         </div>
+        
       </section>
+      
 
       {/* Featured Posts Section */}
       <section id="featured" className="py-20">

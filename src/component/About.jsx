@@ -241,7 +241,7 @@ const AboutPage = () => {
       <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white py-20">
         <div className="container mx-auto px-4">
           {/* Header Section */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               What Our Customers Say
             </h1>
