@@ -34,7 +34,7 @@ export default function Navbar() {
       <nav className="container mx-auto h-20 flex justify-between items-center">
         {/* Logo */}
         <div className="w-64 ">
-          <img src="/logo1.png" alt="logo" />
+          <img src="/logo3.png" alt="logo" />
         </div>
 
         {/* Desktop Menu */}
