@@ -147,9 +147,9 @@ const AboutPage = () => {
               className="rounded-lg overflow-hidden shadow-xl"
             >
               <img
-                src="/3.jpg"
+                src="/s.jpg"
                 alt="Our Beginning"
-                className="w-full h-full object-cover"
+                className="w-[600px] h-[350px] object-cover"
               />
             </motion.div>
           </motion.div>
@@ -167,7 +167,7 @@ const AboutPage = () => {
               className="rounded-lg overflow-hidden shadow-xl md:order-2 order-2"
             >
               <img
-                src="/2.jpg"
+                src="/j.jpg"
                 alt="Our Journey"
                 className="w-full h-full object-cover"
               />
