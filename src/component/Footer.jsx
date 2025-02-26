@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Footer = () => {
   return (
@@ -9,17 +10,17 @@ export const Footer = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <h4 className="text-xl font-bold mb-4">Contact Us</h4>
-              <p className="mb-2">Email: info@canwe.com</p>
-              <p className="mb-2">Phone: (555) 123-4567</p>
+              <p className="mb-2">Email: info@Kanvi.com</p>
+              <p className="mb-2">Phone: +91-9999999999</p>
               <p>Address: 123 Food Street, Cuisine City</p>
             </div>
             <div>
               <h4 className="text-xl font-bold mb-4">Quick Links</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:text-red-200">Home</a></li>
-                <li><a href="#" className="hover:text-red-200">About Us</a></li>
-                <li><a href="#" className="hover:text-red-200">Menu</a></li>
-                <li><a href="#" className="hover:text-red-200">Contact</a></li>
+                <li><Link to={'/'} className="hover:text-red-200">Home</Link></li>
+                <li><Link to={'/about'} className="hover:text-red-200">About Us</Link></li>
+                <li><Link to={'/brand'} className="hover:text-red-200">Our Brands</Link></li>
+                <li><Link to={'/contact'} className="hover:text-red-200">Contact</Link></li>
               </ul>
             </div>
             <div>
@@ -32,7 +33,7 @@ export const Footer = () => {
             </div>
           </div>
           <div className="border-t border-red-700 mt-8 pt-8 text-center">
-            <p>&copy; {new Date().getFullYear()} Can We? All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Kan-Vi All rights reserved.</p>
           </div>
         </div>
       </footer>
