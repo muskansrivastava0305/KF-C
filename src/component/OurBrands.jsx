@@ -157,10 +157,10 @@ const BrandPage = () => {
                     Order on Zomato
                   </a>
                 </div> */}
-                <div className=" button rounded-4xl bg-red-800 w-36 h-9 flex justify-center items-center text-white">
+                <div className=" button rounded-4xl bg-red-800 hover:bg-black w-36 h-9 flex justify-center items-center text-white">
                 <a
                 href="#order"
-                className={`font-bold hover:text-blue-600 transition-colors ${activeSection === "order" ? "text-blue-600" : ""}`}
+                className={`font-bold hover:text-gray-100 transition-colors ${activeSection === "order" ? "text-blue-600" : ""}`}
               >
                 Order Now
               </a>

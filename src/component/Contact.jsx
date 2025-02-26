@@ -76,21 +76,21 @@ const ContactPage = () => {
             <motion.div whileHover={{ y: -5 }} className="p-6 bg-[#21201E] rounded-lg text-white text-center">
               <Phone className="w-8 h-8 mx-auto mb-4 text-[#b71c22]" />
               <h3 className="text-xl font-semibold mb-2">Phone</h3>
-              <p>+1 (555) 123-4567</p>
+              <p>+919315955893</p>
             </motion.div>
 
             {/* Contact Card 2 */}
             <motion.div whileHover={{ y: -5 }} className="p-6 bg-[#21201E] rounded-lg text-white text-center">
               <Mail className="w-8 h-8 mx-auto mb-4 text-[#b71c22]" />
               <h3 className="text-xl font-semibold mb-2">Email</h3>
-              <p>info@kanvifood.co</p>
+              <p>Info.kanvifoodscompany.com</p>
             </motion.div>
 
             {/* Contact Card 3 */}
             <motion.div whileHover={{ y: -5 }} className="p-6 bg-[#21201E] rounded-lg text-white text-center">
               <MapPin className="w-8 h-8 mx-auto mb-4 text-[#b71c22]" />
               <h3 className="text-xl font-semibold mb-2">Address</h3>
-              <p>123 Food Street, Cuisine City, FC 12345</p>
+              <p>Greater Noida West, 201308</p>
             </motion.div>
 
             {/* Contact Card 4 */}

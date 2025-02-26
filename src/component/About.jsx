@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AboutPage = () => {
   const testimonials = [
@@ -367,8 +368,9 @@ const AboutPage = () => {
               Join thousands of satisfied customers who choose Kan-Vi for their
               daily meals.
             </p>
-            <button className="bg-red-800 text-white px-8 py-3 rounded-full font-medium hover:bg-orange-600 transition-colors">
-              Order Now
+            <button className="bg-red-800 text-white px-8 py-3 rounded-full font-medium hover:bg-black hover:text-white transition-colors">
+             
+             <Link to={'/contact'}> Join Us </Link>
             </button>
           </div>
         </div>

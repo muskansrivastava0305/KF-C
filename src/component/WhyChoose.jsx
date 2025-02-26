@@ -13,6 +13,7 @@ import {
   UtensilsCrossed,
 } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import { Link } from "react-router-dom"
 
 const Counter = ({ end, duration = 2000 }) => {
   const [count, setCount] = useState(0)
@@ -80,12 +81,12 @@ export default function WhyChooseUs() {
               Experience the perfect blend of taste, convenience, and value
             </p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-              <a
-                href="/menu"
+              <Link
+               to={'/about'}
                 className="inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-black hover:bg-red-700 hover:text-white transition-colors"
               >
-                Explore Our Menu
-              </a>
+                Discover Our Story
+              </Link>
             </motion.div>
           </motion.div>
         </div>

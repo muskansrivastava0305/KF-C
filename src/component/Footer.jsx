@@ -10,9 +10,9 @@ export const Footer = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <h4 className="text-xl font-bold mb-4">Contact Us</h4>
-              <p className="mb-2">Email: info@Kanvi.com</p>
-              <p className="mb-2">Phone: +91-9999999999</p>
-              <p>Address: 123 Food Street, Cuisine City</p>
+              <p className="mb-2">Email: Info.kanvifoodscompany.com</p>
+              <p className="mb-2">Phone: +919315955893</p>
+              <p>Address: Greater Noida West, 201301</p>
             </div>
             <div>
               <h4 className="text-xl font-bold mb-4">Quick Links</h4>

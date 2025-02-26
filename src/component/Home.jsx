@@ -294,7 +294,7 @@ useEffect(() => {
                 whileTap={{ scale: 0.95 }}
                 className="border-2 border-[#b71c22] px-8 py-3 rounded-full font-semibold text-lg"
               >
-                Order Now
+               <Link to={'/brand'}>Order Now </Link>
               </motion.button>
             </div>
           </motion.div>
@@ -409,7 +409,7 @@ useEffect(() => {
       whileTap={{ scale: 0.95 }}
       className="mt-4 bg-white text-gray-900 px-6 py-2 rounded-full font-semibold inline-block w-fit hover:bg-gray-900 hover:text-white cursor-pointer"
     >
-      View Menu
+     <Link to={'/brand'} > View Menu </Link>
     </motion.button>
   </div>
 </motion.div>
